@@ -15,7 +15,7 @@
             <label for="foto">Foto de Perfil</label>
             <br>
             @if (empty(Auth::user()->foto))
-                <img src="{{ asset('storage/uploads/semFoto.png') }}" alt="Foto de Perfil" style="width: 100px;">
+                <img src="https://www.promoview.com.br/uploads/images/unnamed%2819%29.png" alt="Foto de Perfil" style="width: 100px;">
             @else
                 <img src="{{ asset('storage/uploads/' . Auth::user()->foto) }}" alt="Foto de Perfil" style="width: 100px; height: 100px">
             @endif
