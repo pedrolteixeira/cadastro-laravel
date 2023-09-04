@@ -56,4 +56,24 @@
         </form>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    $(document).on('blur', '#cep', function(){
+        const cep = $(this).val();
+
+        $.ajax({
+            url: 'https://viacep.com.br/ws/'+cep+'/json',
+            method: 'GET',
+            dataType: 'JSON',
+            success: function(data) {
+                if (data.erro) {
+                    alert('CEP inválido')
+                }
+                $('#rua').val(data.logradouro);
+                $('#estado').val(data.uf);
+                $('#cidade').val(data.localidade);
+            }
+        })
+    })
+</script>
 @endsection
