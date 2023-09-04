@@ -11,6 +11,33 @@
     <br>
 
     <div>
+        <form action="/remover-foto" method="POST">
+            <label for="foto">Foto de Perfil</label>
+            <br>
+            @if (empty(Auth::user()->foto))
+                <img src="{{ asset('storage/uploads/semFoto.png') }}" alt="Foto de Perfil" style="width: 100px;">
+            @else
+                <img src="{{ asset('storage/uploads/' . Auth::user()->foto) }}" alt="Foto de Perfil" style="width: 100px; height: 100px">
+            @endif
+            <br>
+            <br>
+            @csrf
+            <button class="btn btn-danger" type="submit">Remover Foto</button>
+        </form>
+        <br>
+        <form action="/salvar-foto" method="POST" enctype="multipart/form-data">
+        @csrf
+
+            <input type="file" class="form-control" id="foto" name="foto" required>
+
+            <button class="btn btn-primary" type="submit" style="margin-top: 20px">Salvar Foto de Perfil</button>
+        </form>
+        <br>
+    </div>
+
+    <br>
+
+    <div>
         <form action="/salvar-endereco" method="POST">
         @csrf
             <label for="cep">CEP</label>
