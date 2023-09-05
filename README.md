@@ -25,3 +25,5 @@
 12 - npm install
 
 13 - npm run dev
+
+13 - No navegador, acesse localhost:8000
