@@ -1,4 +1,4 @@
-É necessário instalar o Xhampp em sua máquina.
+É necessário instalar o Xampp em sua máquina.
 
 1 - git clone https://github.com/pedrolteixeira/cadastro-laravel.git
 
@@ -6,7 +6,7 @@
 
 3 - composer install
 
-4 - Ativar o sql e o appache no xhampp
+4 - Ativar o sql e o appache no xampp
 
 5 - php artisan serve
 
